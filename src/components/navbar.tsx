@@ -3,6 +3,8 @@ import { Kbd } from "@heroui/kbd";
 import { Link } from "@heroui/link";
 import { Input } from "@heroui/input";
 import { ChevronDown } from "lucide-react";
+import {Avatar} from "@heroui/react";
+
 
 import {
   Navbar as HeroUINavbar,
@@ -25,13 +27,8 @@ import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
 
 import {
-  TwitterIcon,
-  GithubIcon,
-  DiscordIcon,
-  WhatsAppIcon,
   SearchIcon
 } from "@/components/icons";
 
@@ -59,7 +56,7 @@ export const Navbar = () => {
   );
 
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky">
+    <HeroUINavbar maxWidth="xl" position="sticky" className="h-20 p-10">
       
       {/* LEFT SECTION */}
       <NavbarContent
@@ -122,36 +119,19 @@ export const Navbar = () => {
 
       {/* RIGHT SECTION */}
       <NavbarContent justify="end" className="hidden sm:flex">
-        
-        <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal href={siteConfig.links.twitter}><TwitterIcon /></Link>
-          <Link isExternal href={siteConfig.links.discord}><DiscordIcon /></Link>
-          <Link isExternal href={siteConfig.links.github}><GithubIcon /></Link>
-          <ThemeSwitch />
-        </NavbarItem>
-
+      
         <NavbarItem className="hidden lg:flex">
           {searchInput}
         </NavbarItem>
 
-        <NavbarItem className="hidden md:flex">
-          <Button
-            isExternal
-            as={Link}
-            href={siteConfig.links.sponsor}
-            variant="flat"
-            className="bg-default-100"
-          >
-            <WhatsAppIcon className="text-success" />
-            Hubungi Kami
-          </Button>
-        </NavbarItem>
+        <div className="flex gap-4 items-center">
+          <Avatar isBordered color="danger" src="https://i.pravatar.cc/150?u=a04258114e29026708c" />
+        </div>
 
       </NavbarContent>
 
       {/* MOBILE BURGER TOGGLE */}
       <NavbarContent justify="end" className="sm:hidden">
-        <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
 
