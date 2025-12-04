@@ -68,9 +68,12 @@ export const Navbar = () => {
             GlowVera
           </Link>
         </NavbarBrand>
+      </NavbarContent>
 
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex gap-6 ml-6 items-center">
+      {/* RIGHT SECTION */}
+      <NavbarContent justify="end" className="hidden sm:flex gap-6">
+              {/* Desktop Navigation */}
+        <div className="hidden lg:flex gap-6 items-center">
           {siteConfig.navItems.map((item: any) => {
             // PRODUCTS DROPDOWN MENU
            if (item.label === "Products") {
@@ -97,8 +100,6 @@ export const Navbar = () => {
               </Dropdown>
             );
 }
-
-
             // NORMAL MENU ITEMS
             return (
               <NavbarItem key={item.href}>
@@ -115,11 +116,6 @@ export const Navbar = () => {
             );
           })}
         </div>
-      </NavbarContent>
-
-      {/* RIGHT SECTION */}
-      <NavbarContent justify="end" className="hidden sm:flex">
-      
         <NavbarItem className="hidden lg:flex">
           {searchInput}
         </NavbarItem>
