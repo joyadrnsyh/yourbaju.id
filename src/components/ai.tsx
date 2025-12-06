@@ -61,7 +61,7 @@ export const Chatbot: React.FC = () => {
         <div className="mt-3 w-96 h-[500px] bg-white border border-gray-200 rounded-xl shadow-2xl flex flex-col overflow-hidden font-sans">
           {/* Header */}
           <div className="bg-black p-3 text-white font-bold text-sm flex justify-between items-center">
-            <span>Asisten Gemini</span>
+            <span>Chat Bot</span>
             <button
               onClick={() => setIsOpen(false)}
               className="text-white font-bold text-lg hover:text-gray-300"
